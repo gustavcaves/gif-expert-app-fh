@@ -17,11 +17,11 @@ export const GifGrid = ({category}) => {
 
           {
           images.map( ( image ) => 
-            <GifItem 
-                key={ image.id }
-                {...image}
-            />
-            ) 
+                <GifItem 
+                    key={ image.id }
+                    {...image}
+                />
+            )
           }
 
         </div>
