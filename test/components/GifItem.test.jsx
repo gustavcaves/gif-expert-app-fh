@@ -39,6 +39,4 @@ describe('Pruebas sobre el <GifItem /> ', () => {
     });
 
 
-
-
 });
