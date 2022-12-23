@@ -16,8 +16,8 @@ describe('Pruebas en <GifGrid />', () => {
             isLoading: true
         });
 
-
         render( <GifGrid category={ category } /> );
+        screen.debug()
         expect( screen.getByText( 'Cargando...' ) );
         expect( screen.getByText( category ) );
 
