@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, getByText, getByRole, getAllByPlaceholderText } from '@testing-library/react';
 import { GifExpertApp } from '../src/GifExpertApp';
 
 
@@ -9,11 +9,6 @@ describe('Pruebas en <GifExpertApp />', () => {
         const {container} = render(<GifExpertApp />);
         expect(container).toMatchSnapshot()
 
-    });
-
-
-    test('should ', () => {
-        
     });
 
 
@@ -29,21 +24,23 @@ describe('Pruebas en <GifExpertApp />', () => {
 
 // USANDO chatGPT
 
-// it('should be able to add a new category', () => {
-//     const { getByTestId } = render(<GifExpertApp />);
-//     const input = getByTestId('input-category');
-//     const form = getByTestId('form-add-category');
+test('should be able to add a new category', () => {
+    const { getByTestId } = render(<GifExpertApp />);
+    // screen.debug()
 
-//     fireEvent.change(input, { target: { value: 'Valorant' } });
-//     fireEvent.submit(form);
+    const input = screen.getByRole('textbox');
+    const form  = screen.getByRole('form');
 
-//     const categories = getByTestId('gif-grid');
-//     expect(categories).toHaveTextContent('Valorant');
-//   });
+    fireEvent.change(input, { target: { value: 'Valorant' } });
+    fireEvent.submit(form);
+
+    const categories = getBy('card-grid');
+    expect(categories).toHaveTextContent('Valorant');
+  });
 
 
 
-// it('should not be able to add a duplicate category', () => {
+// test('should not be able to add a duplicate category', () => {
 //     const { getByTestId } = render(<GifExpertApp />);
 //     const input = getByTestId('input-category');
 //     const form = getByTestId('form-add-category');
