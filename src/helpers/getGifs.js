@@ -14,7 +14,7 @@ import HttpsProxyAgent from 'https-proxy-agent';
 
 export const getGifs = async(category) => {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=a3KBu0lqCOSgx71tDfHAAwZ734xL4iR3&q=${category}&limit=10`
-    // const resp = await fetch( url , {agent: new HttpsProxyAgent('<myproxy>')});
+    // const resp = await fetch( url , {agent: new HttpsProxyAgent('')});
     const resp = await fetch( url );
 
     const { data } = await resp.json();

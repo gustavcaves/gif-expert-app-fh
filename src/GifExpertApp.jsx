@@ -13,7 +13,7 @@ export const GifExpertApp = () => {
 
         if ( categories.includes(newCategory) ) return;
 
-        console.log(newCategory)
+        // console.log(newCategory)
         // setCategories([...categories, 'Valorant']);
         setCategories([newCategory, ...categories]);
         // setCategories( cat => [ ...cat, 'Valorant']);
